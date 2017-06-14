@@ -1,0 +1,41 @@
+{
+"output": "./output",
+  "helpers": {
+    "WebDriverIO": {
+      "url": "https://realstartertest.azurewebsites.net/",
+      "browser": "chrome",
+      "restart": true,
+      "windowSize": "maximize",
+      "timeouts": {
+        "script": 20000,
+        "page load": 220000,
+        "implicit": 15000
+      }
+    }
+  },
+
+
+  "include": {
+    "I": "./steps_file.js",
+    "userLoginPage": "./pages/UserLogin.js",
+    "adminLoginPage": "./pages/AdminLogin.js"
+  },
+
+  "mocha": {
+    "reporterOptions": {
+      "reportDir": "output",
+      "reportFilename": "Test_Report_Information",
+      "reportTitle": "Test_Case_Execution_Report",
+      "reportPageTitle": "Execution_Report",
+      "inlineAssets": true,
+      "autoOpen": true
+    }
+  },
+
+  "bootstrap": "./start_server.js",
+  "teardown": "./stop_server.js",
+  "hooks": [],
+  "tests": "./*_test.js",
+  "timeout": 120000,
+  "name": "Real Starter Automation Project"
+}
